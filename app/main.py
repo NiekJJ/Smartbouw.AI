@@ -5,9 +5,9 @@ from typing import List, Optional
 import os
 
 from . import models, schemas, crud
-from .database import SessionLocal, engine
+from .database import SessionLocal, engine, Base
 
-models.Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
