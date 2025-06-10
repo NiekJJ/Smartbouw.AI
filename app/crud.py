@@ -164,12 +164,16 @@ def create_document_map(db: Session, project_id: int, map_data: schemas.Document
 def get_document_mappen(db: Session, project_id: int):
     return db.query(DocumentMap).filter(DocumentMap.project_id == project_id).all()
 
-def upload_document(db: Session, document: schemas.DocumentCreate):
+def add_document_to_project(
+    db: Session, project_id: int, document: schemas.DocumentCreate
+) -> Document:
+    """Koppel een document aan een project en sla het op."""
+
     db_doc = Document(
         bestandsnaam=document.bestandsnaam,
         pad=document.pad,
+        project_id=project_id,
         map_id=document.map_id,
-        project_id=document.project_id,
     )
     db.add(db_doc)
     db.commit()

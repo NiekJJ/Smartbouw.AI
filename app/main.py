@@ -153,7 +153,7 @@ def upload_document(
     )
     db = SessionLocal()
     try:
-        crud.upload_document(db, document=document_create)
+        crud.add_document_to_project(db, project_id=project_id, document=document_create)
     finally:
         db.close()
 
