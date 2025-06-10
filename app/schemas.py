@@ -107,15 +107,13 @@ class AfspraakOut(AfspraakBase):
 # DOCUMENTEN
 # =====================
 
-class DocumentBase(BaseModel):
+class DocumentCreate(BaseModel):
+    """Schema for creating a new document."""
+
     bestandsnaam: str
     pad: str
     project_id: int
     map_id: Optional[int] = None
-
-
-class DocumentCreate(DocumentBase):
-    pass
 
 
 class DocumentOut(BaseModel):
