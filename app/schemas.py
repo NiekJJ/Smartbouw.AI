@@ -107,6 +107,17 @@ class AfspraakOut(AfspraakBase):
 # DOCUMENTEN
 # =====================
 
+class DocumentBase(BaseModel):
+    bestandsnaam: str
+    pad: str
+    project_id: int
+    map_id: Optional[int] = None
+
+
+class DocumentCreate(DocumentBase):
+    pass
+
+
 class DocumentOut(BaseModel):
     id: int
     bestandsnaam: str
