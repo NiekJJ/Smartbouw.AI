@@ -147,12 +147,13 @@ def upload_document(
 
     document_create = schemas.DocumentCreate(
         bestandsnaam=filename,
-        bestandslocatie=filepath,
-        map_id=map_id
+        pad=filepath,
+        project_id=project_id,
+        map_id=map_id,
     )
     db = SessionLocal()
     try:
-        crud.add_document_to_project(db, project_id=project_id, document=document_create)
+        crud.upload_document(db, document=document_create)
     finally:
         db.close()
 
