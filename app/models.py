@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Date, Enum, Text, DateTime
-from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.orm import relationship
+from .database import Base
 from datetime import datetime, date
 import enum
 
-Base = declarative_base()
 
 # =====================
 # ENUMS
