@@ -167,6 +167,7 @@ def get_document_mappen(db: Session, project_id: int):
 def upload_document(db: Session, document: schemas.DocumentCreate):
     db_doc = Document(
         bestandsnaam=document.bestandsnaam,
+        pad=document.pad,
         map_id=document.map_id,
         project_id=document.project_id
     )
