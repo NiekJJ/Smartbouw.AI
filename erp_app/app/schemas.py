@@ -116,6 +116,15 @@ class DocumentOut(BaseModel):
         from_attributes = True
 
 
+class DocumentCreate(BaseModel):
+    """Schema voor het aanmaken van een Document."""
+
+    bestandsnaam: str
+    project_id: int
+    map_id: Optional[int] = None
+    pad: Optional[str] = None
+
+
 class DocumentMapCreate(BaseModel):
     naam: str
 
